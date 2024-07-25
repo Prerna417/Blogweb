@@ -26,7 +26,7 @@ export default function Write() {
             try {
                  await axios.post("/upload", data); 
             } catch (err) {
-
+                console.log(err);
             }
 
         }
@@ -41,11 +41,11 @@ export default function Write() {
     return (
         <div className="write">
             {file && (
-                <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
+                <img className=" ml-12 w-[60vw] h-[300px] md:ml-36 object-cover md:w-[60vw] md:h-[450px] rounded-[10px]" src={URL.createObjectURL(file)} alt="" />
             )}
 
             <form action="" className="writeForm" onSubmit={handleSubmit}>
-                <div className="writeFormGroup">
+                <div className="ml-12 md:ml-36 flex items-center">
                     <label htmlFor="fileInput">
                         <i className="writeIcon fa-solid fa-plus"></i>
                     </label>
@@ -55,12 +55,12 @@ export default function Write() {
                         onChange={e => setTitle(e.target.value)}
                     />
                 </div>
-                <div className="writeFormGroup">
+                <div className="ml-12 md:ml-36 flex items-center">
                     <textarea placeholder="Tell your story..." type="text" className="writeInput writeText"
                         onChange={e => setDesc(e.target.value)}
                     ></textarea>
                 </div>
-                <button className="writeSubmit" type="submit">pusblish</button>
+                <button className="writeSubmit" type="submit">publish</button>
             </form>
         </div>
     )

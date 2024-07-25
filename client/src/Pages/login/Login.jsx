@@ -33,7 +33,7 @@ export default function Login() {
                 <input type="password" className="loginInput" placeholder="Enter your Password..." ref={passwordRef} />
                 <button className="loginButton" type="submit" disabled={isFetching}>Login</button>
             </form>
-            <button className="loginRegisterButton"><Link className="link" to="/register">Register</Link></button>
+            <button className="loginRegisterButton "><Link className="link" to="/register">Register</Link></button>
         </div>
     )
 }

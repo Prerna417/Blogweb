@@ -47,7 +47,8 @@ export default function Settings() {
   }
 
   return (
-    <div className="settings">
+    <div>
+      <div className="hidden md:flex">
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <div className="settingsUpdateTitle">Update Your Account</div>
@@ -75,6 +76,36 @@ export default function Settings() {
         </form>
       </div>
       <Sidebar />
+    </div>
+    <div className="flex flex-col md:hidden">
+      <div className="settingsWrapper">
+        <div className="settingsTitle">
+          <div className="settingsUpdateTitle">Update Your Account</div>
+          <div className="settingsDeleteTitle">Delete Account</div>
+        </div>
+        <form action="" className="settingsForm" onSubmit={handleSubmit}>
+          <label htmlFor="">Profile Picture</label>
+          <div className="settingsPP">
+            <img src={file ? URL.createObjectURL(file) :PF+ user.profilePic} alt="" />
+            <label htmlFor="fileInput">
+              <i className="settingsPPIcon fa-regular fa-circle-user"></i>
+            </label>
+            <input type="file" id="fileInput" style={{ display: "none" }} onChange={(e) => setFile(e.target.files[0])} />
+          </div>
+          <label htmlFor="">Username</label>
+          <input type="text" placeholder={user.username} onChange={e => setUsername(e.target.value)} />
+          <label htmlFor="">Email</label>
+          <input type="email" placeholder={user.email} onChange={e => setEmail(e.target.value)} />
+          <label htmlFor="">Password</label>
+          <input type="password" onChange={e => setPassword(e.target.value)} />
+          <button className="settingsSubmit" type="submit">Update</button>
+          {success && (
+            <span style={{ color: "green", textAlign: "center", marginTop: "20px" }}>Profile has been updated...</span>
+          )}
+        </form>
+      </div>
+      <Sidebar />
+    </div>
     </div>
   )
 }

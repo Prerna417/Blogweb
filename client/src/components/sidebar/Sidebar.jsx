@@ -20,14 +20,14 @@ export default function Sidebar() {
                 <img className="sidebarImg" src="https://images.unsplash.com/photo-1518602164578-cd0074062767?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                     alt="" />
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, unde veniam iure sunt corporis et itaque, voluptates, nisi voluptatum est accusantium nihil hic? Atque, dolor! Quae rem vitae esse repellat.
+                Our platform is a vibrant community where passionate writers and curious readers come together. Here, you can create your own blog, share your unique stories, and connect with like-minded individuals. Whether you're a seasoned blogger or just starting out, our user-friendly interface makes it easy for everyone to express themselves.
                 </p>
             </div>
             <div className="sidebarItem">
                 <span className="sidebarTitle">CATEGORIES</span>
                 <ul className="sidebarList">
                     {cats.map((c) => (
-                        <Link to={`/?cat=${c.name}`} className="link">
+                        <Link to={`/?cat=${c.name}`} className="link" key={c._id}>
                         <li className="sidebarListItem">{c.name}</li>
                         </Link>
                     ))}

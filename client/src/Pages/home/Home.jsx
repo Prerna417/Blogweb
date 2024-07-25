@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="home">
+      <div className="flex-col md:flex md:flex-row">
         <Posts posts={posts} />
         <Sidebar />
       </div>
