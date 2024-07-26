@@ -12,17 +12,24 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("/posts"+search)
-      setPosts(res.data)
+      try {
+        const res = await axios.get("/posts" + search);
+        const data = Array.isArray(res.data) ? res.data : [];
+        console.log("Fetched posts data:", data);
+        setPosts(data);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+        setPosts([]); // Ensure posts is an array
+      }
     }
-    fetchPosts()
-  }, [search])
+    fetchPosts();
+  }, [search]);
 
   return (
     <>
       <Header />
       <div className="flex-col md:flex md:flex-row">
-        <Posts posts={posts} />
+      <Posts posts={Array.isArray(posts) ? posts : []} />
         <Sidebar />
       </div>
     </>
