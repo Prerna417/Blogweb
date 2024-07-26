@@ -9,9 +9,7 @@ import Topbar from "./components/topbar/Topbar"
 import About from "./Pages/About";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
   Routes
 } from "react-router-dom";
 import { context } from "./context/Context";

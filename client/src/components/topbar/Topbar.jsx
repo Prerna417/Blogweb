@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./topbar.css"
 import { context } from "../../context/Context";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 

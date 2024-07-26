@@ -10,12 +10,12 @@ export default function about() {
                     <p>Our platform is a vibrant community where passionate writers and curious readers come together. Here, you can create your own blog, share your unique stories, and connect with like-minded individuals. Whether you're a seasoned blogger or just starting out, our user-friendly interface makes it easy for everyone to express themselves.</p>
                 </div>
                 <div className='md:w-1/2  '>
-                    <img src='https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/03/what-is-a-blog-1.webp' className='m-0'></img>
+                    <img src='https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/03/what-is-a-blog-1.webp' alt="image1" className='m-0'></img>
                 </div>
             </div>
             <div className='flex-col flex md:flex-row w-full space-y-10 '>
                 <div className='md:w-1/2 md:mr-10 order-last md:order-first mt-10 mb-10'>
-                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAvq55MKgKkEy26do06q08sdKpzSjq7w-84wsVqEK76rB-v06pK6w9tmj9hW3VKbvbLPc&usqp=CAU' className='m-0 object-cover w-full h-full'></img>
+                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAvq55MKgKkEy26do06q08sdKpzSjq7w-84wsVqEK76rB-v06pK6w9tmj9hW3VKbvbLPc&usqp=CAU' alt="image2" className='m-0 object-cover w-full h-full'></img>
                 </div>
                 <div className='md:w-1/2 flex flex-col '>
                     <h1 className='font-semibold text-2xl mb-4 '>What we offer</h1>
@@ -36,7 +36,7 @@ export default function about() {
                     </ul>
                 </div>
                 <div className='md:w-1/2  '>
-                    <img src='https://qph.cf2.quoracdn.net/main-qimg-063ff0102fa7c06db2358c3dfea03022' className='m-0 object-cover w-full h-full'></img>
+                    <img src='https://qph.cf2.quoracdn.net/main-qimg-063ff0102fa7c06db2358c3dfea03022' alt="image3" className='m-0 object-cover w-full h-full'></img>
                 </div>
             </div>
         </div>
