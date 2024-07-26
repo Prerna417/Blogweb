@@ -4,6 +4,7 @@ import { useContext, useState } from "react"
 import { context } from "../../context/Context"
 import axios from "axios"
 
+
 export default function Settings() {
   const [file, setFile] = useState(null);
   const [username, setUsername] = useState("");
@@ -46,13 +47,25 @@ export default function Settings() {
 
   }
 
+  const handleDelete=async()=>{
+      try{
+         await axios.delete(`users/${user._id}`,{
+            data:{userId:user._id}
+          });
+          dispatch({type:"LOGOUT"})
+          window.location.replace("/");
+      }catch(err){
+        console.log(err);
+      }
+  }
+
   return (
     <div>
       <div className="hidden md:flex">
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <div className="settingsUpdateTitle">Update Your Account</div>
-          <div className="settingsDeleteTitle">Delete Account</div>
+          <div className="settingsDeleteTitle" onClick={handleDelete}>Delete Account</div>
         </div>
         <form action="" className="settingsForm" onSubmit={handleSubmit}>
           <label htmlFor="">Profile Picture</label>
@@ -81,7 +94,7 @@ export default function Settings() {
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <div className="settingsUpdateTitle">Update Your Account</div>
-          <div className="settingsDeleteTitle">Delete Account</div>
+          <div className="settingsDeleteTitle" onClick={handleDelete}>Delete Account</div>
         </div>
         <form action="" className="settingsForm" onSubmit={handleSubmit}>
           <label htmlFor="">Profile Picture</label>
