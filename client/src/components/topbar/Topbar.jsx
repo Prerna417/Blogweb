@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Topbar() {
     const { user, dispatch } = useContext(context);
-    const PF = "http://localhost:5000/images/";
+    const PF = "https://blogsphere-oe8h.onrender.com/images/";
     const [inputVal, setInputVal] = useState("");
     const navigate = useNavigate();
     const [menu, setMenu] = useState(false);

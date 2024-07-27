@@ -39,7 +39,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000/api/",
+  "proxy": "https://blogsphere-oe8h.onrender.com/api/",
   "devDependencies": {
     "tailwindcss": "^3.4.6"
   }

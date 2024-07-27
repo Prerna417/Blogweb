@@ -9,7 +9,8 @@ export default function Sidebar() {
     useEffect(() => {
         const getCats = async () => {
             const res = await axios.get("/categories");
-            setCats(res.data);
+            console.log("Fetched categories:", res.data);
+            setCats(Array.isArray(res.data) ? res.data : []);
         };
         getCats();
     }, []);
@@ -26,11 +27,15 @@ export default function Sidebar() {
             <div className="sidebarItem">
                 <span className="sidebarTitle">CATEGORIES</span>
                 <ul className="sidebarList">
-                    {cats.map((c) => (
+                {Array.isArray(cats) ? (
+                    cats.map((c) => (
                         <Link to={`/?cat=${c.name}`} className="link" key={c._id}>
-                        <li className="sidebarListItem">{c.name}</li>
+                            <li className="sidebarListItem">{c.name}</li>
                         </Link>
-                    ))}
+                    ))
+                ) : (
+                    <li>Error: Categories data is not an array.</li>
+                )}
                 </ul>
             </div>
             <div className="sidebarItem">
