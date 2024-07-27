@@ -9,6 +9,9 @@ const categoryRoute = require("./routes/categories")
 const multer = require("multer")
 const path = require("path")
 
+const cors = require('cors');
+app.use(cors());
+
 dotenv.config();
 app.use(express.json());
 app.use("/images",express.static(path.join(__dirname,"/images")))
@@ -40,7 +43,7 @@ app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 console.log('Environment Variables:', process.env);
 
-const port = process.env.PORT||5000;
+const port = process.env.PORT;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
