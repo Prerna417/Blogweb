@@ -12,9 +12,9 @@ const path = require("path")
 const cors = require('cors');
 app.use(cors(
     {
-        origin: 'https://melodic-beignet-a0429e.netlify.app/', // Replace with your Netlify domain
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type']
+        origin: 'https://melodic-beignet-a0429e.netlify.app', // Replace with your Netlify domain
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS if dealing with preflight requests
+        allowedHeaders: ['Content-Type', 'Authorization'] // Add any other headers you might be using
     }
 ));
 
