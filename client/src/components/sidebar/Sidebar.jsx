@@ -8,7 +8,7 @@ export default function Sidebar() {
 
     useEffect(() => {
         const getCats = async () => {
-            const res = await axios.get("/categories");
+            const res = await axios.get("https://blogsphere-oe8h.onrender.com/api/categories");
             console.log("Fetched categories:", res.data);
             setCats(Array.isArray(res.data) ? res.data : []);
         };

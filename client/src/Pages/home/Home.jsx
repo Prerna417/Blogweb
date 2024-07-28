@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("/posts" + search);
+        const res = await axios.get("https://blogsphere-oe8h.onrender.com/api/posts" + search);
         const data = Array.isArray(res.data) ? res.data : [];
         console.log("Fetched posts data:", data);
         setPosts(data);

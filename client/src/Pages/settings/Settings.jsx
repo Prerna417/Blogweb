@@ -31,14 +31,14 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post("https://blogsphere-oe8h.onrender.com/api/upload", data);
       } catch (err) {
 
       }
 
     }
     try {
-      const res = await axios.put("/users/" + user._id, updatedUser);
+      const res = await axios.put("https://blogsphere-oe8h.onrender.com/api/users/" + user._id, updatedUser);
       setSuccess(true)
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data })
     } catch (err) {
@@ -49,7 +49,7 @@ export default function Settings() {
 
   const handleDelete=async()=>{
       try{
-         await axios.delete(`users/${user._id}`,{
+         await axios.delete(`https://blogsphere-oe8h.onrender.com/api/users/${user._id}`,{
             data:{userId:user._id}
           });
           dispatch({type:"LOGOUT"})
