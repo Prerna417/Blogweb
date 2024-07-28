@@ -12,7 +12,7 @@ const path = require("path")
 const cors = require('cors');
 app.use(cors(
     {
-        origin: 'https://66a5e7180aed3be6e586f4d4--dreamy-treacle-ee634c.netlify.app/', // Replace with your Netlify domain
+        origin: 'https://66a5ecc8fa7205e84d65553f--bloggerhubb.netlify.app/', // Replace with your Netlify domain
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS if dealing with preflight requests
         allowedHeaders: ['Content-Type', 'Authorization'] // Add any other headers you might be using
     }
